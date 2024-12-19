@@ -418,7 +418,7 @@ header.main-header .logo img, .logo-footer img {
 
 
 .global .faq-boxes .card-header.collapsed h5 i {
-    margin-top: -10px;
+    /* margin-top: -10px; */
 }
 
 
@@ -860,3 +860,42 @@ ul li p{margin: 0px;}
     color: #fff;
     background-color: #131b23;
 }
+
+
+.lines {
+  margin-top: 5px;
+}
+.lines {
+  width: 43px;
+  height: 3px;
+  display: inline-block;
+  background-color: #b3bec5;
+  margin-top: 22px;
+  margin-bottom: 14px;
+}
+
+
+
+
+
+
+
+
+.faq-boxes .card-header:hover,
+.faq-boxes .card-header:not(.collapsed)
+ {
+  background: #1f2b38;
+  color: #fff;
+}
+
+.faq-boxes .card-header:hover i,
+.faq-boxes .card-header:not(.collapsed) i
+ {
+
+  color: #fff;
+}
+
+
+
+
+

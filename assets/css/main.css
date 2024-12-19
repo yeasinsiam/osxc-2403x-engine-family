@@ -617,7 +617,7 @@ label {
   top: 100%;
   -webkit-transition: 0.3s;
   transition: 0.3s;
-  padding: 13px 0px;
+  padding: 0px;
   padding-bottom: 0px;
   opacity: 0;
   visibility: hidden;

@@ -89,6 +89,7 @@ Line Number: 124';
             <div class="row mb-35 align-items-end">
                 <div class="col-lg-9 col-md-12 text-cen text-lg-left wow fadeInLeft">
                     <h3 class="fs-34 white ">Hot Products</h3>
+                    <span class="lines" style="width: 100px; margin-top: 14px;"></span>
                 </div>
             </div>
             <div class="row wow fadeInUp">
@@ -135,17 +136,22 @@ Line Number: 124';
             <div class="row">
                 <div class="col-lg-12">
                     <p class="sub-head blue f-700 wow fadeInDown">WHY CHOOSE US</p>
-                    <h3 class="title-color-grey fs-33 mb-25 wow fadeInLeft">Reliable Engines for Construction Equipment
-                        and Industrial Applications</h3>
+                    <h3 class="title-color-grey fs-33 mb-25 wow fadeInLeft">Leading diesel engine distributor for the
+                        most powerful products</h3>
+
                     <div class="why-us-content wow fadeInDown">
-                        <p>MTU offers an array of high-performance, economical diesel engines for construction
-                            equipment, deployment in ports, or for airport vehicles and ground equipment. Moreover, our
-                            engines have also proven themselves as drive systems for stationary applications and
-                            machines such as pumps and compressors.</p>
+                        <p>
+                            When looking for an excellent diesel engine, you want it to be precisely assembled,
+                            fuel-efficient, and with fantastic torque characteristics. But isn’t it too good to be
+                            affordable? At Engine Family, we will prove to you that it’s not. We are a China-based
+                            diesel engine supplier and your #1 choice for the best yet reasonably priced products for
+                            on-road as well as off-road applications. A glimpse into our catalog is enough to find
+                            world-class engines and spares for less money.
+                        </p>
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInLeft">
-                    <video width="100%" height="100%" autoplay="" loop="" muted="muted"
+                    <video style="border-radius: 14px;" width="100%" height="100%" autoplay="" loop="" muted="muted"
                         poster="<?= base_url('assets/video_img.jpg'); ?>" data-play="" left="">
                         <source src="<?= base_url('assets/MTU_C_I_AgricultureWeb_May2016_English.mp4?ext=.mp4'); ?>"
                             type="video/mp4">
@@ -155,26 +161,43 @@ Line Number: 124';
                 </div>
                 <div class="col-lg-6 wow fadeInRight">
                     <div class="why-us-content">
-                        <p>Whether wheel loaders, haul trucks or roadbuilding equipment, mobile cranes, aircraft
-                            tractors, or container cranes, our wide range of engines, with outputs of 75 kW (Series 900)
-                            to 3,000 kW (Series 4000), MTU always has the perfect engine for your equipment. As a
-                            systems supplier, MTU’s integration expertise can provide you with a complete package that
-                            is optimally tailored to your needs – with both software and hardware. Various power
-                            take-off options for highly specialized applications offer even greater flexibility.</p>
-                        <p>In order for our diesel drive systems to operate trouble-free even under extreme conditions,
-                            we test them again and again in continuous operation and with full loads in the heat, cold,
-                            and dust,as well as with frequent load changes. This ensures that our engines offer maximum
-                            availability.</p>
+                        <p>Here we supply MTU engines and the latest series from the biggest-name diesel engine
+                            manufacturers. To get your perfect fit, do the following:</p>
+                        <p>Decide on the features. All the products available in our range are application-specific. And
+                            the right choice always depends on how you’re going to use it. So, whether you’re looking
+                            for an air-cooled diesel engine generator or an upgrade to your agricultural machinery,
+                            think of the desired torque level, emissions control, etc.
+                            Select the brand. Regardless of the intended applications, it doesn’t make sense to go for a
+                            diesel engine from a no-name manufacturer. Choose proven performance instead. That is why
+                            you will never find unknown brands in our assortment – we only list heavy-hitters, like
+                            Cummins, MTU, DEUTZ, among others.
+                            Browse the series. If some established diesel engine manufacturer launches a new lineup,
+                            rest assured that it will be listed at Engine Family. Our catalog is ever-increasing with
+                            state-of-the-art systems in a variety of configurations. Choose from available series and
+                            get to know more about the specifications of each of them.
+                        </p>
                     </div>
                 </div>
                 <div class="col-lg-12 wow fadeInUp">
                     <div class="why-us-content">
-                        <p>In addition to their well-known longevity, low-maintenance construction and long service
-                            intervals also ensure their cost-effectiveness. They minimize expenses and downtime and
-                            ensure that all equipment is fully operational again in record time. the efficient fuel
-                            consumption of all MTU engines, which are among the lowest-consumption engines on the market
-                            due to their second-generation common rail injection system and intelligent engine
-                            management.</p>
+                        <h3 class="title-color-grey fs-33 mt-20 mb-10 wow fadeInLeft">The service you deserve</h3>
+                        <p>
+                            At Engine Family, we stand behind the satisfaction of every customer. Here is what this
+                            means to us:
+                            offering all-round assistance to help you choose the right diesel engine, generator,
+                            impeller, or whatever you need;
+                            making sure you’re clued-up on all major specifications and characteristics of the product
+                            you’re about to order;
+                            ensuring inventory availability through our range of warehouses so that your desired diesel
+                            engine or set of parts is always in stock;
+                            delivering your order to wherever you’re located and facilitating the customs clearance
+                            process;
+                            providing after-sales service to meet your diesel engine maintenance needs and foster
+                            lasting customer relationships.
+                            If you’re interested in some diesel engines or spare parts found in Engine Family’s
+                            selection, please contact us. Your first-class service starts from the moment we answer your
+                            call!
+                        </p>
                     </div>
                 </div>
             </div>
@@ -187,7 +210,7 @@ Line Number: 124';
         <div class="container-fluid">
             <div class="row mb-35 align-items-end">
                 <div class="col-lg-9 col-md-12 text-cen text-lg-left">
-                    <p class="sub-head blue f-700 wow fadeInDown">Featured Product</p>
+                    <p class="sub-head blue f-700 wow fadeInDown">FEATURED PRODUCTS</p>
                     <h3 class="fs-34 wow fadeInLeft">Product that we offers</h3>
                 </div>
                 <div class="col-lg-3 col-md-12 text-center text-lg-right wow fadeInRight">
@@ -225,6 +248,40 @@ Line Number: 124';
                                             href="<?= base_url('product/') . $ftvalue->name_slug; ?>"><?= $ftvalue->name; ?></a>
                                     </h3>
                                     <span class="line bg-blue"></span>
+
+
+                                    <!-- <table class="table table-striped table-bordered mb-10" width="100%">
+                                        <tbody>
+                                            <tr class="firstRow">
+                                                <td>Engine model</td>
+                                                <td>QSZ13-C400-II</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Engine type</td>
+                                                <td>4 stroke, 6 cylinders in line</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Displacement</td>
+                                                <td>13 L</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Rated Power</td>
+                                                <td>298kW (400 HP) @ 1900 rpm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Peak Torque</td>
+                                                <td>2000 N.m @ 1400 rpm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Emission Standard</td>
+                                                <td>NS Ⅲ / EU stage ⅢA</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Use for</td>
+                                                <td>Construction Machinery</td>
+                                            </tr>
+                                        </tbody>
+                                    </table> -->
                                 </div>
                             </div>
                         </div>
