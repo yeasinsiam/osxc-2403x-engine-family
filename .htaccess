@@ -1,0 +1,25 @@
+
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    
+    # RewriteCond %{HTTPS} off
+    # RewriteRule (.*) http://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+    
+    RewriteCond $1 !^(index\.php|resources|robots\.txt|public)
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php?/$1 [QSA,L]
+</IfModule>
+<Files 403.shtml>
+order allow,deny
+allow from all
+</Files>
+
+deny from 211.64.0.0/13
+deny from 211.123.0.0/16
+deny from 211.124.0.0/14
+deny from 211.128.0.0/9
+deny from 210.25.0.0/16
+deny from 210.26.0.0/15
+deny from 210.28.0.0/14
+deny from 210.32.0.0/12

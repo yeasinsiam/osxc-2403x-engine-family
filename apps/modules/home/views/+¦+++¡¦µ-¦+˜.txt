@@ -1,0 +1,7 @@
+首页产品轮播返回原版需要修改以下文件
+
+/public_html/apps/modules/home/views/viewHome.php
+
+/public_html/assets/css/owl.carousel.min.css
+
+只需要将带有原版字样的文件重命名为 owl.carousel.min.css | viewHome.php

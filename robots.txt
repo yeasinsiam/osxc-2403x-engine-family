@@ -1,0 +1,33 @@
+User-agent: *
+sitemap:https://engine-family.com/sitemap.xml
+Disallow: /product/mtu-series-8000-engines
+Disallow: /product/mtu-series-1163-engines
+Disallow: /product/mtu-series-4000-gensets
+Disallow: /product/mtu-series-2000-gensets
+Disallow: /product/mtu-2000cr-series
+Disallow: /product/mtu-2000-series
+Disallow: /categories/Marine-Engine
+Disallow: /assets/*
+Disallow: /categories/G-Drive-N-series
+Disallow: /categories/G-Drive-QSZ-series
+Disallow: /industry-news
+Disallow: /admin/uploads/news/
+Disallow: /admin/uploads/testimonials/
+Disallow: /categories/lib/
+Disallow: /testimonials/?
+Disallow: /admin/uploads/members/?
+Disallow:/admin/uploads/category/?
+Disallow: /company-news
+Disallow: /categories/z14-truck-engines
+Disallow: */Twitter
+Disallow: /search?product=*
+Disallow: /?
+Disallow: /?ref=
+Disallow: /part/messages
+Disallow:/admin/uploads/?
+Disallow:/categories/messages
+Disallow:/part/adler32
+Disallow:/zlib/inflate
+Disallow:/lib/zlib/*
+Disallow: /search?product=*
+Disallow:/zlib/messages

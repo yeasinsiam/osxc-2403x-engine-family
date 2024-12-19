@@ -1,0 +1,98 @@
+/*
+
+File Name: style.css
+
+Theme Name:  Dieseldemo  | Child Theme
+
+Author: RT-Themes
+
+Version: 1.0
+
+Author URI: http://themeforest.net/user/stmcan
+
+Theme URI: http://themeforest.net/user/stmcan
+
+Description: Designed and developed by RT-Themes - <a href="http://themeforest.net/user/stmcan">stmcan</a>
+
+License: GNU General Public License
+
+License URI: /Licensing/gpl.txt
+
+Text Domain: rttheme
+
+Template: Dieseldemo
+
+*/
+
+#tab-trade-information .parts td, #tab-technical-info .parts td {
+    width: 25% !important;
+}
+
+#tab-trade-information .iveco td, #tab-technical-info .iveco td {
+    width: 20% !important;
+}
+
+#tab-trade-information .iveco2 td, #tab-technical-info .iveco2 td {
+    width: 11% !important;
+}
+#tab-trade-information .iveco3 td, #tab-technical-info .iveco3 td {
+    width: 35% !important;
+}
+#tab-trade-information .iveco4 td, #tab-technical-info .iveco4 td {
+    width: 33.33% !important;
+}
+#tab-trade-information .cat td, #tab-technical-info .cat td {
+    width: 33.33% !important;
+}
+.mtu td {
+    width: 15% !important;
+}
+#tab-documents a {
+    float: left;
+    margin: 10px 0;
+    width: 100%;
+}
+#tab-documents td a img {
+    display: inline-block;
+    margin-right: 10px;
+}
+#tab-general-parts .gthree td:first-child {
+    width: auto;
+}
+.spartst td:first-child img {
+    margin: 0 auto;
+}
+.emdtab td img {
+    margin: 0 auto;
+}
+.top_content {
+    min-height: 30px !important;}
+	
+#sticky_logo {
+  
+    margin-top: 3px;
+    max-width: 170px;
+   
+    width: 170px;
+}	
+
+header.woocommerce-products-header .term-description p {
+    font-size: 16px;
+}
+
+.product_cat_parts .cat-item.cat-item-104 {
+    display: block !important;
+}
+.product_cat_parts .cat-item.cat-item-137 {
+    display: none !important;
+}
+
+@media only screen and (min-width: 960px) and (max-width:1099px) {
+	
+	#navigation_bar > ul > li > a {
+    padding: 15px 25px !important;
+}
+	}
+	
+
+	
