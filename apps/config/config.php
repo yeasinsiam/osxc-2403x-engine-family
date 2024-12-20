@@ -24,7 +24,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 |
 */
 
-$config['base_url'] = 'http://osxc-2403x.test/';
+$config['base_url'] = 'http://osxc-2403x.test';
 
 //try to catch the base url in case of undefined base url 
 if (!$config['base_url']) {
@@ -50,7 +50,7 @@ if (!$config['base_url']) {
 | variable so that it is blank.
 |
 */
-$config['index_page'] = '';
+$config['index_page'] = 'index.php';
 
 /*
 |--------------------------------------------------------------------------

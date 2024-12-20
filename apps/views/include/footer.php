@@ -96,15 +96,38 @@
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6J2XEPC46Y"></script>
 <script>
-    window.dataLayer = window.dataLayer || [];
+window.dataLayer = window.dataLayer || [];
 
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
+function gtag() {
+    dataLayer.push(arguments);
+}
+gtag('js', new Date());
 
-    gtag('config', 'G-6J2XEPC46Y');
+gtag('config', 'G-6J2XEPC46Y');
 </script>
+
+<!-- Organization structured data -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Engine Family",
+    "alternateName": "Shanghai Diesel engine family Co., Ltd.",
+    "url": "https://engine-family.com/",
+    "logo": "https://engine-family.com/assets/images/logo.png",
+    "contactPoint": [{
+        "@type": "ContactPoint",
+        "telephone": "+86 21 332 827 11",
+        "contactType": "customer service"
+    }, {
+        "@type": "ContactPoint",
+        "email": "charles@mtu-solution.com",
+        "contactType": "customer service"
+    }],
+    "sameAs": ["https://www.facebook.com/DieselEngineFamily/", "https://www.linkedin.com/company/engine-family/"]
+}
+</script>
+
 </body>
 
 </html>

@@ -4,6 +4,34 @@
     
     # RewriteCond %{HTTPS} off
     # RewriteRule (.*) http://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+
+
+    # Remove ?page=1 from URLs
+    RewriteCond %{QUERY_STRING} (^|&)page=1(&|$)
+    RewriteRule ^(.*)$ /$1? [R=301,L]
+
+
+    # Redirect URLs with trailing slashes to their non-trailing counterparts
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} .+/$
+    RewriteRule ^(.+)/$ http://%{HTTP_HOST}/$1 [R=301,L]
+
+    # Redirect URLs with trailing slashes to their non-trailing slash counterpart
+    # RewriteCond %{THE_REQUEST} \s[^?]*//
+    # RewriteRule ^.*$ /$0 [R=301,L,NE]
+    #  Redirect URLs with trailing slashes to their non-trailing slash counterpart -solution
+    # RewriteCond %{REQUEST_URI} ^/$
+    # RewriteCond %{THE_REQUEST} \s//+[\s?]
+    # RewriteRule ^ / [R=301,L]
+
+    # Redirect /home to the base URL
+    RewriteCond %{THE_REQUEST} \s/home[\s?] [NC]
+    RewriteRule ^home$ / [R=301,L]
+
+    # Redirect /index.php to the base URL
+    RewriteCond %{THE_REQUEST} \s/index\.php[\s?] [NC]
+    RewriteRule ^index\.php$ / [R=301,L]
     
     RewriteCond $1 !^(index\.php|resources|robots\.txt|public)
     RewriteCond %{REQUEST_FILENAME} !-f
