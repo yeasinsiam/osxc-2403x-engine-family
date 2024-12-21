@@ -6,6 +6,7 @@
 
     <meta charset="utf-8">
 
+    <meta name="robots" content="noindex">
 
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -70,13 +71,13 @@
 
                             <?php if (!empty($product->img)) { ?>
 
-                            <img src="<?= base_url('admin/uploads/product/') . $product->img; ?>"
-                                alt="<?= $product->img_tag; ?>" style="margin: 0 auto;" />
+                                <img src="<?= base_url('admin/uploads/product/') . $product->img; ?>"
+                                    alt="<?= $product->img_tag; ?>" style="margin: 0 auto;" />
 
                             <?php } else { ?>
 
-                            <img src="<?= base_url('admin/uploads/product/Defaults-image.jpg'); ?>"
-                                alt="<?= $product->img_tag; ?>" style="margin: 0 auto;" />
+                                <img src="<?= base_url('admin/uploads/product/Defaults-image.jpg'); ?>"
+                                    alt="<?= $product->img_tag; ?>" style="margin: 0 auto;" />
 
                             <?php } ?>
 
@@ -91,14 +92,14 @@
                     <?php $msg = $this->session->flashdata('msg');
                     if ($msg) {  ?>
 
-                    <div class="alert alert-<?php echo $msg['class'] ?> alert-dismissible" data-dismiss="alert"
-                        aria-hidden="true">
+                        <div class="alert alert-<?php echo $msg['class'] ?> alert-dismissible" data-dismiss="alert"
+                            aria-hidden="true">
 
 
 
-                        <?php echo $msg['message']; ?>
+                            <?php echo $msg['message']; ?>
 
-                    </div>
+                        </div>
 
                     <?php } ?>
 
@@ -115,32 +116,32 @@
 
                                 if ($product_list[0]) { ?>
 
-                            <div class="custom-select-wrapper">
+                                    <div class="custom-select-wrapper">
 
-                                <div class="custom-select">
+                                        <div class="custom-select">
 
-                                    <div class="custom-select__trigger"><span>Other</span>
+                                            <div class="custom-select__trigger"><span>Other</span>
 
-                                        <div class="arrow"></div>
+                                                <div class="arrow"></div>
+
+                                            </div>
+
+                                            <div class="custom-options">
+
+                                                <span class="custom-option selected" data-value="Other">Other</span>
+
+                                                <?php foreach ($product_list as $val) { ?>
+
+                                                    <a class="custom-option"
+                                                        href="<?= base_url('part-product/') . $val->name_slug; ?>"><?= $val->name; ?></a>
+
+                                                <?php } ?>
+
+                                            </div>
+
+                                        </div>
 
                                     </div>
-
-                                    <div class="custom-options">
-
-                                        <span class="custom-option selected" data-value="Other">Other</span>
-
-                                        <?php foreach ($product_list as $val) { ?>
-
-                                        <a class="custom-option"
-                                            href="<?= base_url('part-product/') . $val->name_slug; ?>"><?= $val->name; ?></a>
-
-                                        <?php } ?>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
 
                             <?php }
                             } ?>
@@ -340,262 +341,109 @@
 
 
     <script>
-    document.querySelector('.custom-select-wrapper').addEventListener('click', function() {
+        document.querySelector('.custom-select-wrapper').addEventListener('click', function() {
 
-        $('.custom-options').toggle();
+            $('.custom-options').toggle();
 
-        this.querySelector('.custom-select').classList.toggle('open');
+            this.querySelector('.custom-select').classList.toggle('open');
 
-    })
+        })
     </script>
 
 
 
     <style>
-    .prdt-detail .prdt-detail-head .custom-select-wrapper {
-
-        position: relative;
-
-        user-select: none;
-
-        width: 200px;
-
-        float: right;
-
-    }
-
-    .prdt-detail .prdt-detail-head .custom-select {
-
-        position: relative;
-
-        display: flex;
-
-        flex-direction: column;
-
-        border-width: 0 2px 0 2px;
-
-        border-style: solid;
-
-        border-color: #394a6d;
-
-        height: auto;
-
-        padding: 0;
-
-    }
-
-    .prdt-detail .prdt-detail-head .custom-select__trigger {
-
-        position: relative;
-
-        display: flex;
-
-        align-items: center;
-
-        justify-content: space-between;
-
-        padding: 0 10px;
-
-        font-size: 16px;
-
-        font-weight: 300;
-
-        color: #3b3b3b;
-
-        height: 45px;
-
-        line-height: 50px;
-
-        background: #ffffff;
-
-        cursor: pointer;
-
-        border-width: 2px 0 2px 0;
-
-        border-style: solid;
-
-        border-color: #394a6d;
-
-    }
-
-    .prdt-detail .prdt-detail-head .custom-options {
-
-        position: absolute;
-
-        top: 100%;
-
-        right: 0;
-
-        border: 2px solid #394a6d;
-
-        border-top: 0;
-
-        background: #fff;
-
-        transition: all 0.5s;
-
-        opacity: 0;
-
-        visibility: hidden;
-
-        pointer-events: none;
-
-        display: none;
-
-        z-index: 2;
-
-    }
-
-    .prdt-detail .prdt-detail-head .custom-select.open .custom-options {
-
-        opacity: 1;
-
-        visibility: visible;
-
-        pointer-events: all;
-
-        width: 80%;
-
-        height: 527px;
-
-        overflow: auto;
-
-    }
-
-    .prdt-detail .prdt-detail-head .custom-option {
-
-        position: relative;
-
-        display: block;
-
-        padding: 0 22px 0 22px;
-
-        font-size: 16px;
-
-        font-weight: 300;
-
-        color: #3b3b3b;
-
-        line-height: 40px;
-
-        cursor: pointer;
-
-        transition: all 0.5s;
-
-    }
-
-    .prdt-detail .prdt-detail-head .custom-option:hover {
-
-        cursor: pointer;
-
-        background-color: #b2b2b2;
-
-    }
-
-    .prdt-detail .prdt-detail-head .custom-option.selected {
-
-        color: #ffffff;
-
-        background-color: #305c91;
-
-    }
-
-
-
-    .prdt-detail .prdt-detail-head .arrow {
-
-        position: relative;
-
-        height: 15px;
-
-        width: 15px;
-
-    }
-
-    .prdt-detail .prdt-detail-head .arrow::before,
-    .arrow::after {
-
-        content: "";
-
-        position: absolute;
-
-        bottom: 0px;
-
-        width: 0.15rem;
-
-        height: 100%;
-
-        transition: all 0.5s;
-
-    }
-
-    .prdt-detail .prdt-detail-head .arrow::before {
-
-        left: -5px;
-
-        transform: rotate(45deg);
-
-        background-color: #394a6d;
-
-    }
-
-    .prdt-detail .prdt-detail-head .arrow::after {
-
-        left: 5px;
-
-        transform: rotate(-45deg);
-
-        background-color: #394a6d;
-
-    }
-
-    .prdt-detail .prdt-detail-head .open .arrow::before {
-
-        left: -5px;
-
-        transform: rotate(-45deg);
-
-    }
-
-    .prdt-detail .prdt-detail-head .open .arrow::after {
-
-        left: 5px;
-
-        transform: rotate(45deg);
-
-    }
-
-
-
-    @media (max-width: 600px) {
-
         .prdt-detail .prdt-detail-head .custom-select-wrapper {
 
-            padding-top: 20px;
+            position: relative;
+
+            user-select: none;
+
+            width: 200px;
+
+            float: right;
 
         }
 
-        .prdt-detail .prdt-detail-head .custom-select-wrapper {
+        .prdt-detail .prdt-detail-head .custom-select {
 
-            width: 100%;
+            position: relative;
+
+            display: flex;
+
+            flex-direction: column;
+
+            border-width: 0 2px 0 2px;
+
+            border-style: solid;
+
+            border-color: #394a6d;
+
+            height: auto;
+
+            padding: 0;
 
         }
 
-        .prdt-detail .prdt-detail-head .custom-select.open .custom-options {
+        .prdt-detail .prdt-detail-head .custom-select__trigger {
 
+            position: relative;
 
+            display: flex;
 
-            width: 100%;
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 0 10px;
+
+            font-size: 16px;
+
+            font-weight: 300;
+
+            color: #3b3b3b;
+
+            height: 45px;
+
+            line-height: 50px;
+
+            background: #ffffff;
+
+            cursor: pointer;
+
+            border-width: 2px 0 2px 0;
+
+            border-style: solid;
+
+            border-color: #394a6d;
 
         }
 
-    }
+        .prdt-detail .prdt-detail-head .custom-options {
 
-    @media (min-width: 600px) {
+            position: absolute;
 
-        .prdt-detail .prdt-detail-head .custom-select-wrapper {
+            top: 100%;
 
-            padding-top: 20px;
+            right: 0;
+
+            border: 2px solid #394a6d;
+
+            border-top: 0;
+
+            background: #fff;
+
+            transition: all 0.5s;
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            pointer-events: none;
+
+            display: none;
+
+            z-index: 2;
 
         }
 
@@ -607,7 +455,7 @@
 
             pointer-events: all;
 
-            width: 438px;
+            width: 80%;
 
             height: 527px;
 
@@ -615,5 +463,158 @@
 
         }
 
-    }
+        .prdt-detail .prdt-detail-head .custom-option {
+
+            position: relative;
+
+            display: block;
+
+            padding: 0 22px 0 22px;
+
+            font-size: 16px;
+
+            font-weight: 300;
+
+            color: #3b3b3b;
+
+            line-height: 40px;
+
+            cursor: pointer;
+
+            transition: all 0.5s;
+
+        }
+
+        .prdt-detail .prdt-detail-head .custom-option:hover {
+
+            cursor: pointer;
+
+            background-color: #b2b2b2;
+
+        }
+
+        .prdt-detail .prdt-detail-head .custom-option.selected {
+
+            color: #ffffff;
+
+            background-color: #305c91;
+
+        }
+
+
+
+        .prdt-detail .prdt-detail-head .arrow {
+
+            position: relative;
+
+            height: 15px;
+
+            width: 15px;
+
+        }
+
+        .prdt-detail .prdt-detail-head .arrow::before,
+        .arrow::after {
+
+            content: "";
+
+            position: absolute;
+
+            bottom: 0px;
+
+            width: 0.15rem;
+
+            height: 100%;
+
+            transition: all 0.5s;
+
+        }
+
+        .prdt-detail .prdt-detail-head .arrow::before {
+
+            left: -5px;
+
+            transform: rotate(45deg);
+
+            background-color: #394a6d;
+
+        }
+
+        .prdt-detail .prdt-detail-head .arrow::after {
+
+            left: 5px;
+
+            transform: rotate(-45deg);
+
+            background-color: #394a6d;
+
+        }
+
+        .prdt-detail .prdt-detail-head .open .arrow::before {
+
+            left: -5px;
+
+            transform: rotate(-45deg);
+
+        }
+
+        .prdt-detail .prdt-detail-head .open .arrow::after {
+
+            left: 5px;
+
+            transform: rotate(45deg);
+
+        }
+
+
+
+        @media (max-width: 600px) {
+
+            .prdt-detail .prdt-detail-head .custom-select-wrapper {
+
+                padding-top: 20px;
+
+            }
+
+            .prdt-detail .prdt-detail-head .custom-select-wrapper {
+
+                width: 100%;
+
+            }
+
+            .prdt-detail .prdt-detail-head .custom-select.open .custom-options {
+
+
+
+                width: 100%;
+
+            }
+
+        }
+
+        @media (min-width: 600px) {
+
+            .prdt-detail .prdt-detail-head .custom-select-wrapper {
+
+                padding-top: 20px;
+
+            }
+
+            .prdt-detail .prdt-detail-head .custom-select.open .custom-options {
+
+                opacity: 1;
+
+                visibility: visible;
+
+                pointer-events: all;
+
+                width: 438px;
+
+                height: 527px;
+
+                overflow: auto;
+
+            }
+
+        }
     </style>

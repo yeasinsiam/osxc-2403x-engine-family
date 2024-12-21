@@ -8,13 +8,20 @@ class Home extends MY_Controller
 	{
 
 		parent::__construct();
+
 		$this->load->helper("common");
+
 		$this->load->model("Home_model", "Home");
 	}
 
 	public function index()
 	{
 
+
+		// $result['hot_product'] = [];
+		// $result['featered_product'] = [];
+		// $result['slider'] = [];
+		// $result['testimonials'] = [];
 		$result['hot_product'] = $this->Home->hot_product_list();
 		$result['featered_product'] = $this->Home->featered_product_list();
 		$result['slider'] = $this->Home->slider_list();

@@ -15,7 +15,7 @@
 
     <!-- Start: Inner Banner Section -->
     <section class="section inner-banner-2" data-overlay="7"
-        style="background-image: url('http://osxc-2403x.test/assets/images/bg/Ersatzteile.jpg');">
+        style="background-image: url('https://wikitechbd.site/assets/images/bg/Ersatzteile.jpg');">
 
         <div class="container-fluid">
 
@@ -27,7 +27,7 @@
 
                     <ul class="inner-bnr-nav pl-0">
 
-                        <li><a href="http://osxc-2403x.test/">Home</a></li>
+                        <li><a href="https://wikitechbd.site/">Home</a></li>
 
                         <li>Quality Policy</li>
 

@@ -21,9 +21,9 @@
     # RewriteCond %{THE_REQUEST} \s[^?]*//
     # RewriteRule ^.*$ /$0 [R=301,L,NE]
     #  Redirect URLs with trailing slashes to their non-trailing slash counterpart -solution
-    # RewriteCond %{REQUEST_URI} ^/$
-    # RewriteCond %{THE_REQUEST} \s//+[\s?]
-    # RewriteRule ^ / [R=301,L]
+    RewriteCond %{REQUEST_URI} ^/$
+    RewriteCond %{THE_REQUEST} \s//+[\s?]
+    RewriteRule ^ / [R=301,L]
 
     # Redirect /home to the base URL
     RewriteCond %{THE_REQUEST} \s/home[\s?] [NC]

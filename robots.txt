@@ -30,4 +30,12 @@ Disallow:/part/adler32
 Disallow:/zlib/inflate
 Disallow:/lib/zlib/*
 Disallow: /search?product=*
-Disallow:/zlib/messages
+
+Disallow: /product/*
+Disallow: /category/*
+Disallow: /categories/*
+Disallow: /part/*
+Disallow: /part-product/*
+
+
+

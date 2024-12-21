@@ -246,7 +246,7 @@
         function captchaSubmit(event) {
             event.preventDefault();
             if (captchaField.value === random_captcha[1]) {
-                window.alert("Captcha is successfully passed")
+                // window.alert("Captcha is successfully passed")
                 event.target.submit();
             } else {
                 window.alert("Captcha is failed. please try again.")

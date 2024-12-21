@@ -60,18 +60,19 @@ class Page extends MY_Controller
         $this->load->view('page/contact');
     }
 
-    public function products(){
-        $result=[
-            'product'=>[
-                'meta_title'=>'meta_title',
-                'meta_desc'=>'meta_desc',
-                'meta_keyword'=>'meta_keyword',
-                'name'=>'name',
+    public function products()
+    {
+        $result = [
+            'product' => [
+                'meta_title' => 'meta_title',
+                'meta_desc' => 'meta_desc',
+                'meta_keyword' => 'meta_keyword',
+                'name' => 'name',
             ]
         ];
-        $result['products_list'] =$this->Page->products_list();
-        $template=$_GET['t']?$_GET['t']:'products';
-        $this->load->view('page/'.$template, $result);
+        $result['products_list'] = $this->Page->products_list();
+        $template = $_GET['t'] ? $_GET['t'] : 'products';
+        $this->load->view('page/' . $template, $result);
     }
     public function product()
     {
@@ -84,9 +85,9 @@ class Page extends MY_Controller
         $id = $this->uri->segment(2);
         $result['product'] = $this->Page->product_detail($id);
         $result['product_list'] = $this->Page->get_product_category($result['product']->category);
-// 		echo"<pre>";
-// 		print_r($result['product_list']);
-// 		die;
+        // 		echo"<pre>";
+        // 		print_r($result['product_list']);
+        // 		die;
         $this->load->view('page/product_details', $result);
     }
 
@@ -109,12 +110,12 @@ class Page extends MY_Controller
         if (isset($_SERVER['HTTP_X_WAP_PROFILE'])) {
             return true;
         }
-// 如果via信息含有wap则一定是移动设备,部分服务商会屏蔽该信息
+        // 如果via信息含有wap则一定是移动设备,部分服务商会屏蔽该信息
         if (isset($_SERVER['HTTP_VIA'])) {
             // 找不到为flase,否则为true
             return stristr($_SERVER['HTTP_VIA'], "wap") ? true : false;
         }
-// 脑残法，判断手机发送的客户端标志,兼容性有待提高。其中'MicroMessenger'是电脑微信
+        // 脑残法，判断手机发送的客户端标志,兼容性有待提高。其中'MicroMessenger'是电脑微信
         if (isset($_SERVER['HTTP_USER_AGENT'])) {
             $clientkeywords = array('nokia', 'sony', 'ericsson', 'mot', 'samsung', 'htc', 'sgh', 'lg', 'sharp', 'sie-', 'philips', 'panasonic', 'alcatel', 'lenovo', 'iphone', 'ipod', 'blackberry', 'meizu', 'android', 'netfront', 'symbian', 'ucweb', 'windowsce', 'palm', 'operamini', 'operamobi', 'openwave', 'nexusone', 'cldc', 'midp', 'wap', 'mobile', 'MicroMessenger');
             // 从HTTP_USER_AGENT中查找手机浏览器的关键字
@@ -122,8 +123,8 @@ class Page extends MY_Controller
                 return true;
             }
         }
-// 协议法，因为有可能不准确，放到最后判断
-        if (isset ($_SERVER['HTTP_ACCEPT'])) {
+        // 协议法，因为有可能不准确，放到最后判断
+        if (isset($_SERVER['HTTP_ACCEPT'])) {
             // 如果只支持wml并且不支持html那一定是移动设备
             // 如果支持wml和html但是wml在html之前则是移动设备
             if ((strpos($_SERVER['HTTP_ACCEPT'], 'vnd.wap.wml') !== false) && (strpos($_SERVER['HTTP_ACCEPT'], 'text/html') === false || (strpos($_SERVER['HTTP_ACCEPT'], 'vnd.wap.wml') < strpos($_SERVER['HTTP_ACCEPT'], 'text/html')))) {
@@ -185,7 +186,7 @@ class Page extends MY_Controller
     public function partAjax()
     {
         $page = isset($_POST['page']) ? $_POST['page'] : 1;
-        $category1 = $_POST['category'];//$this->uri->segment(2);
+        $category1 = $_POST['category']; //$this->uri->segment(2);
         $result['product_list'] = $this->Page->part_category_page($category1, $page);
         $result['page_total'] = $page_total = $this->Page->part_category_page_nums($category1);
         $result['page_total_page'] = ceil($page_total / 16);
@@ -206,9 +207,9 @@ class Page extends MY_Controller
     public function industry()
     {
         $result['page'] = $this->Page->page_list('1');
-// 		echo"<pre>";
-// 		print_r($result['page']);
-// 		die;
+        // 		echo"<pre>";
+        // 		print_r($result['page']);
+        // 		die;
         $this->load->view('page/industry', $result);
     }
 
@@ -265,13 +266,15 @@ class Page extends MY_Controller
         $email = $this->input->post('email');
         $product_url = $this->input->post('product_url');
         if (!empty($email)) {
-            $data = array('page' => $this->input->post('product'),
+            $data = array(
+                'page' => $this->input->post('product'),
                 'name' => $this->input->post('name'),
                 'phone' => $this->input->post('phone'),
                 'email' => $this->input->post('email'),
                 'subject' => $this->input->post('subject'),
                 'description' => $this->input->post('description'),
-                'created' => date('Y-m-d H:i:s'));
+                'created' => date('Y-m-d H:i:s')
+            );
             $result = $this->Page->save($data, 'tbl_enquiry');
             $subject = "Enquiry Form";
             $message = "<h4>Product for Enquiry</h4>";
@@ -299,20 +302,21 @@ class Page extends MY_Controller
             $this->session->set_flashdata('msg', array('message' => 'Email Address Inavlid !', 'class' => 'danger'));
             redirect($product_url);
         }
-
     }
 
     public function send()
     {
         $email = $this->input->post('email');
         if (!empty($email)) {
-            $data = array('page' => 'Contact',
+            $data = array(
+                'page' => 'Contact',
                 'name' => $this->input->post('name'),
                 'phone' => $this->input->post('phone'),
                 'email' => $this->input->post('email'),
                 'subject' => $this->input->post('subject'),
                 'description' => $this->input->post('message'),
-                'created' => date('Y-m-d H:i:s'));
+                'created' => date('Y-m-d H:i:s')
+            );
             $result = $this->Page->save($data, 'tbl_enquiry');
             $subject = "Contact Form";
             $message = "<h4>Contact for Enquiry</h4>";
@@ -339,7 +343,6 @@ class Page extends MY_Controller
             $this->session->set_flashdata('msg', array('message' => 'Email Address Inavlid !', 'class' => 'danger'));
             redirect('contact');
         }
-
     }
 
 
@@ -356,11 +359,11 @@ class Page extends MY_Controller
         $category = $this->Page->get_newscate($cate_name);
         $result['news_list'] = $this->Page->news_list($category->id);
         $result['news_total'] = $this->Page->news_total($category->id);
-        $result['news'] = $category?$category:[
-            'meta_title'=>'news',
-            'meta_desc'=>'news',
-            'name'=>'news',
-            'meta_keyword'=>'news',
+        $result['news'] = $category ? $category : [
+            'meta_title' => 'news',
+            'meta_desc' => 'news',
+            'name' => 'news',
+            'meta_keyword' => 'news',
         ];
         $this->load->view('page/news', $result);
     }
